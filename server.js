@@ -1,6 +1,6 @@
 const express = require('express');
-const HtmlRoutes = require('/Users/ukudei/Desktop/UTBootcamp/JotBot/routes/HtmlRoutes.js'); 
-const ApiRoutes = require('/Users/ukudei/Desktop/UTBootcamp/JotBot/routes/ApiRoutes.js'); 
+const HtmlRoutes = require('/routes/HtmlRoutes.js'); 
+const ApiRoutes = require('/routes/ApiRoutes.js'); 
 const PORT = process.env.PORT || 3001; // Setting the port for the server to listen on
 
 const app = express(); // Creating an instance of Express

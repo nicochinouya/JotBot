@@ -1,6 +1,6 @@
 const express = require('express');
-const HtmlRoutes = require('/routes/HtmlRoutes.js'); 
-const ApiRoutes = require('/routes/ApiRoutes.js'); 
+const HtmlRoutes = require('./routes/HtmlRoutes'); 
+const ApiRoutes = require('./routes/ApiRoutes'); 
 const PORT = process.env.PORT || 3001; // Setting the port for the server to listen on
 
 const app = express(); // Creating an instance of Express
@@ -15,10 +15,9 @@ app.use(express.json()); // Parses incoming requests with JSON payloads
 app.use(express.static('public'));
 
 // Mounting HTML routes middleware
-app.use(HtmlRoutes); // Including HTML routes
-
+app.use('/', HtmlRoutes); 
 // Mounting API routes middleware
-app.use(ApiRoutes); // Including API routes
+app.use('/api', ApiRoutes); 
 
 // Starting the server
 app.listen(PORT, () => {

@@ -1,17 +1,26 @@
 const express = require('express');
-const HtmlRoutes = require(/Users/ukudei/Desktop/UTBootcamp/JotBot/routes/HtmlRoutes.js)
-const ApiRoutes = require(/Users/ukudei/Desktop/UTBootcamp/JotBot/routes/ApiRoutes.js)
-const PORT = port.env.PORT || 3001;
-//
-const app = express();
+const HtmlRoutes = require('/Users/ukudei/Desktop/UTBootcamp/JotBot/routes/HtmlRoutes.js'); 
+const ApiRoutes = require('/Users/ukudei/Desktop/UTBootcamp/JotBot/routes/ApiRoutes.js'); 
+const PORT = process.env.PORT || 3001; // Setting the port for the server to listen on
 
-//
-app.use(express.urlencoded({ extended: false}));
-app.use{express.json()};
+const app = express(); // Creating an instance of Express
+
+// Middleware to parse URL-encoded bodies
+app.use(express.urlencoded({ extended: false }));
+
+// Middleware to parse JSON bodies
+app.use(express.json()); // Parses incoming requests with JSON payloads
+
+// Serving static files from the 'public' directory
 app.use(express.static('public'));
-app.use(HtmlRoutes)
-app.use(ApiRoutes)
 
+// Mounting HTML routes middleware
+app.use(HtmlRoutes); // Including HTML routes
+
+// Mounting API routes middleware
+app.use(ApiRoutes); // Including API routes
+
+// Starting the server
 app.listen(PORT, () => {
-    console.log(' Server Running on http://localhost:${port3001}')
-})
+    console.log(`Server Running on http://localhost:${PORT}`); // Logging the server URL
+});

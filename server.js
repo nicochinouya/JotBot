@@ -21,5 +21,5 @@ app.use('/api', ApiRoutes);
 
 // Starting the server
 app.listen(PORT, () => {
-    console.log(`Server Running on http://localhost:${PORT}`); // Logging the server URL
+    console.log(`Server Running on http://localhost:3001`); // Logging the server URL
 });

@@ -6,6 +6,7 @@ const fs = require('fs'); // Importing the File System module for file operation
 router.get('/api/notes', async (req, res) => {
     // Reading the content of the JSON file synchronously and parsing it into a JavaScript object
     const dbJson = await JSON.parse(fs.readFileSync("db/db.json")); 
+    console.log(dbJson); 
     // Sending the JSON response containing all notes to the client
     res.json(dbJson);
 });

@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 });
 
 // Route to serve the notes page (notes.html)
-router.get('/notes', (req, res) => {
+router.get('/notes.html', (req, res) => {
     // Sending the notes.html file located in the 'public' directory
     res.sendFile(path.join(__dirname, '../public/notes.html'));
 });
